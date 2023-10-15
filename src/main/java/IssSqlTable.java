@@ -61,7 +61,7 @@ public class IssSqlTable {
         }
     }
 
-    void speedISS(String url, String username, String password) throws SQLException {
+    double speedISS(String url, String username, String password) throws SQLException {
         Connection connection = DriverManager.getConnection(url, username, password);
         Statement statement = connection.createStatement();
         String sqlQuery = "SELECT longitude, latitude, time FROM ISS_data ORDER BY time DESC LIMIT 1";
@@ -95,6 +95,7 @@ public class IssSqlTable {
         double c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
         double result = r * c;
 
+        return result*3.6;
     }
 
     void printLocationTable(String url, String username, String password) throws SQLException {

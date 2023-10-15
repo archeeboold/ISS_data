@@ -42,12 +42,15 @@ public class Main {
         System.out.println();
         instanceOfIssSqlTableClass.speedISS(url, username, password);
 
-//        instanceOfTranslateIssRequestFromJsonClass.translateHumans(); //download and translate from json location data
-//        //create (or clean old humans table), insert data\/
-//        instanceOfIssSqlTableClass.insertHumansTable(url, username, password, instanceOfTranslateIssRequestFromJsonClass);
-//        instanceOfIssSqlTableClass.printHumansTable(url, username, password); //print sql location table
-//        System.out.println(instanceOfIssSqlTableClass.countOfRecordsLocationTable(url, username, password, "Humans_data")+" records in Humans Table");
-
+        instanceOfTranslateIssRequestFromJsonClass.translateHumans(); //download and translate from json location data
+        //create (or clean old humans table), insert data\/
+        instanceOfIssSqlTableClass.insertHumansTable(url, username, password, instanceOfTranslateIssRequestFromJsonClass);
+        instanceOfIssSqlTableClass.printHumansTable(url, username, password); //print sql location table
+        System.out.println(instanceOfIssSqlTableClass.countOfRecordsLocationTable(url, username, password, "Humans_data")+" records in Humans Table");
+instanceOfIssSqlTableClass.deleteRecordsFromHumansTable(url, username, password, "Zhu Yangzhu");
+        instanceOfIssSqlTableClass.printHumansTable(url, username, password); //print sql location table
+        System.out.println(instanceOfIssSqlTableClass.countOfRecordsLocationTable(url, username, password, "Humans_data")+" records in Humans Table");
+        System.out.println("speed: "+(int)instanceOfIssSqlTableClass.speedISS(url, username, password)+" km/h");
 
 //        IssSqlTable.deleteAllTables(url, username, password); // delete all tables
     }
